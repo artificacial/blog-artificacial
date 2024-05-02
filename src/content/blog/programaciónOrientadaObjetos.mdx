@@ -1,0 +1,81 @@
+---
+heroImage: /src/assets/images/pexels-jorge-jesus-137537-614117.jpg
+category: POO
+description: >-
+  La Programación Orientada a Objetos (POO) es un paradigma de programación que se basa en el concepto de "objetos", los cuales pueden contener datos en forma de campos, también conocidos como "propiedades", y código en forma de funciones, conocidas como "métodos".
+pubDate: 2024-05-02T22:00:00.000Z
+draft: false
+tags:
+  - Programming
+  - POO
+  - LearnToProgramm
+title: Programación Orintada a Objetos. Introducción.
+---
+
+# Introducción a la programación Orientda a Objetos.
+
+## ¿Qué es la Programación Orientada a Objetos?
+
+Imagina que estás construyendo una casa. En lugar de solo pensar en piezas individuales, como ladrillos, ventanas y puertas, piensas en términos de objetos más grandes y significativos, como "casa", "habitación" y "puerta". Eso es la POO: trata de organizar nuestro código pensando en términos de objetos que tienen características y pueden realizar acciones.
+
+## Conceptos Básicos
+
+#### Objetos
+
+Un objeto es como una caja que puede contener información y acciones. Por ejemplo, una "persona" es un objeto que tiene información como nombre, edad y altura, y puede realizar acciones como caminar, hablar, etc.
+
+```JavaScript
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    saludar: function() {
+        console.log("Hola, soy " + this.nombre);
+    }
+};
+```
+
+#### Clases
+
+Una clase es como un plano o un modelo para crear objetos. Imagina que una clase es un conjunto de instrucciones sobre cómo construir una caja. La clase "persona" podría decir cómo construir una "persona", qué información debe tener y qué acciones puede realizar.
+
+#### Propiedades
+
+Las propiedades son las características de un objeto. Si piensas en una persona, sus propiedades podrían ser su nombre, edad, altura, etc.
+
+#### Métodos
+
+Los métodos son las acciones que un objeto puede realizar. Por ejemplo, una persona puede caminar, hablar, dormir, etc.
+
+```JavaScript
+let persona = {
+    nombre: "Juan",
+    edad: 30,
+    saludar: function() {
+        console.log("Hola, soy " + this.nombre);
+    }
+};
+console.log(persona.nombre); // Accediendo a la propiedad
+persona.saludar(); // Llamando al método
+```
+
+### Ejemplos Visuales
+
+#### Ejemplo 1: Una Casa
+
+Imagina que una "casa" es un objeto. Tiene propiedades como "color", "tamaño" y "número de habitaciones", y métodos como "abrirPuerta()" y "encenderLuces()".
+
+#### Ejemplo 2: Un Coche
+
+Un "coche" también es un objeto. Tiene propiedades como "marca", "modelo" y "año", y métodos como "arrancar()", "acelerar()" y "frenar()".
+
+### Aplicación en la Vida Real
+
+Imagina que estás construyendo una aplicación para una tienda. Tienes objetos como "producto", "cliente" y "pedido".
+
+- **Producto:** Tiene propiedades como "nombre", "precio" y "cantidad en stock". Métodos pueden ser "añadirAlCarrito()" y "actualizarStock()".
+- **Cliente:** Tiene propiedades como "nombre", "correo electrónico" y "dirección". Métodos pueden ser "realizarPedido()" y "verHistorial()".
+- **Pedido:** Tiene propiedades como "productos", "fecha" y "estado". Métodos pueden ser "calcularTotal()" y "cambiarEstado()".
+
+### Resumen
+
+En resumen, la POO es como pensar en el mundo real, donde todo es un objeto con características (propiedades) y acciones (métodos). Al usar POO en la programación, puedes organizar tu código de manera más clara y eficiente, como si estuvieras construyendo y administrando objetos reales.
