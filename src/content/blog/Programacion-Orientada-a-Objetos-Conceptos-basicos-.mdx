@@ -1,0 +1,179 @@
+---
+heroImage: /src/assets/images/pexels-markusspiske-965345.jpg
+category: Programming Fundamentals
+description: >-
+  La Programación Orientada a Objetos (POO) es un paradigma de programación que
+  se basa en el concepto de "objetos", los cuales representan entidades del
+  mundo real.
+pubDate: 2024-05-02T22:00:00.000Z
+tags:
+  - fundamentals
+  - POO
+  - learntoprogramm
+title: 'Programacion Orientada a Objetos. Conceptos basicos. '
+---
+
+# Programación Orientada a Objetos: Fundamentos y Principios Básicos
+
+La Programación Orientada a Objetos (POO) es un paradigma de programación que se basa en el concepto de "objetos", los cuales representan entidades del mundo real. A través de la POO, los programas se organizan de manera que las operaciones y los datos que operan en ellos están agrupados en unidades llamadas objetos. Este enfoque ofrece una forma más intuitiva y estructurada de modelar y resolver problemas complejos.
+
+## 1. Conceptos Fundamentales de la Programación Orientada a Objetos
+
+### 1.1. Objetos
+
+Un objeto es una instancia particular de una clase, que representa una entidad concreta dentro de un programa. Por ejemplo, si estamos construyendo un programa para una biblioteca, podríamos tener una clase llamada `Libro`, y cada libro específico sería un objeto de esa clase.
+
+```python
+class Libro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+
+# Creación de objetos
+libro1 = Libro("El Quijote", "Miguel de Cervantes")
+libro2 = Libro("Harry Potter", "J.K. Rowling")
+
+print(libro1.titulo)  # Output: El Quijote
+print(libro2.autor)   # Output: J.K. Rowling
+```
+
+En este ejemplo, `Libro` es una clase que define la estructura y el comportamiento de los libros. `titulo` y `autor` son atributos que describen las características de cada libro. Al crear objetos (`libro1` y `libro2`), especificamos los valores de estos atributos para cada instancia.
+
+### 1.2. Clases
+
+Una clase es un plano, un modelo o una plantilla para crear objetos. Define los atributos y métodos que todos los objetos de esa clase compartirán. En nuestro ejemplo anterior, `Libro` es una clase que define la estructura de los libros.
+
+### 1.3. Atributos
+
+Los atributos son variables que están asociadas a un objeto particular. Representan las características o propiedades de ese objeto. En el ejemplo anterior, `titulo` y `autor` son atributos de la clase `Libro`.
+
+### 1.4. Métodos
+
+Los métodos son funciones definidas dentro de una clase que pueden ser llamadas para realizar operaciones en los objetos de esa clase. Estos métodos pueden utilizarse para modificar los atributos de un objeto o para realizar acciones relacionadas con él.
+
+```python
+class Libro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+
+    def mostrar_informacion(self):
+        print("Título:", self.titulo)
+        print("Autor:", self.autor)
+
+libro1 = Libro("El Quijote", "Miguel de Cervantes")
+libro1.mostrar_informacion()
+# Output:
+# Título: El Quijote
+# Autor: Miguel de Cervantes
+```
+
+En este ejemplo, `mostrar_informacion()` es un método que muestra la información del libro. Al llamar a este método en el objeto `libro1`, obtenemos la información del libro.
+
+### 1.5. Encapsulación
+
+La encapsulación es un concepto que permite ocultar la implementación interna de un objeto y solo exponer las partes necesarias para interactuar con él. Esto se logra mediante el uso de métodos de acceso (getters) y métodos de modificación (setters).
+
+```python
+class Libro:
+    def __init__(self, titulo, autor):
+        self.__titulo = titulo
+        self.__autor = autor
+
+    def get_titulo(self):
+        return self.__titulo
+
+    def set_titulo(self, titulo):
+        self.__titulo = titulo
+
+libro1 = Libro("El Quijote", "Miguel de Cervantes")
+print(libro1.get_titulo())  # Output: El Quijote
+libro1.set_titulo("Don Quijote de la Mancha")
+print(libro1.get_titulo())  # Output: Don Quijote de la Mancha
+```
+
+En este ejemplo, `titulo` y `autor` se han definido como atributos privados utilizando el prefijo `__`. Para acceder a estos atributos desde fuera de la clase, utilizamos métodos de acceso (`get_titulo()`). Además, se proporcionan métodos de modificación (`set_titulo()`) para cambiar los valores de los atributos de manera controlada.
+
+### 1.6. Herencia
+
+La herencia es un mecanismo que permite que una clase (llamada clase derivada o subclase) herede atributos y métodos de otra clase (llamada clase base o superclase). Esto fomenta la reutilización de código y permite la creación de jerarquías de clases.
+
+```python
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def hacer_sonido(self):
+        pass
+
+class Perro(Animal):
+    def hacer_sonido(self):
+        return "Guau!"
+
+class Gato(Animal):
+    def hacer_sonido(self):
+        return "Miau!"
+
+perro = Perro("Bobby")
+gato = Gato("Mittens")
+
+print(perro.hacer_sonido())  # Output: Guau!
+print(gato.hacer_sonido())   # Output: Miau!
+```
+
+En este ejemplo, `Animal` es la clase base y `Perro` y `Gato` son clases derivadas que heredan de `Animal`. Cada clase derivada redefine el método `hacer_sonido()` para que sea específico de esa clase.
+
+### 1.7. Polimorfismo
+
+El polimorfismo es la capacidad que tienen los objetos de diferentes clases de responder al mismo mensaje de manera distinta. Esto permite tratar objetos de diferentes clases de manera uniforme.
+
+```python
+class Figura:
+    def area(self):
+        pass
+
+class Cuadrado(Figura):
+    def __init__(self, lado):
+        self.lado = lado
+
+    def area(self):
+        return self.lado ** 2
+
+class Circulo(Figura):
+    def __init__(self, radio):
+        self.radio = radio
+
+    def area(self):
+        return 3.14159 * self.radio ** 2
+
+figuras = [Cuadrado(4), Circulo(3)]
+
+for figura in figuras:
+    print("Área:", figura.area())
+```
+
+En este ejemplo, `Figura` es una clase base que define un método `area()`. `Cuadrado` y `Circulo` son clases derivadas que implementan el método `area()` de manera diferente. Al iterar sobre una lista de figuras, podemos llamar al método `area()` de cada objeto sin preocuparnos por el tipo específico de figura.
+
+## 2. Principios Básicos de la Programación Orientada a Objetos
+
+### 2.1. Abstracción
+
+La abstracción es el proceso de identificar las características esenciales de un objeto y eliminar los detalles irrelevantes. En POO, las clases y los objetos son formas de abstracción, ya que representan entidades del mundo real de manera simplificada.
+
+### 2.2. Encapsulamiento
+
+El encapsulamiento implica ocultar los detalles internos de un objeto y exponer solo las partes necesarias para interactuar con él. Esto se logra definiendo atributos como privados y proporcionando métodos de acceso y modificación para trabajar con esos atributos.
+
+### 2.3. Herencia
+
+La herencia permite que una clase herede atributos y métodos de otra clase. Esto fomenta la reutilización de código y la organización jerárquica de clases.
+
+### 2.4. Polimorfismo
+
+El polimorfismo permite que los objetos de diferentes clases respondan al mismo mensaje de manera distinta. Esto facilita el diseño de programas flexibles y extensibles.
+
+## 3. Conclusiones
+
+La Programación Orientada a Objetos es un paradigma poderoso que permite modelar problemas de manera más intuitiva y estructurada. Al entender los conceptos fundamentales como objetos, clases, atributos, métodos, encapsulamiento, herencia y polimorfismo, los programadores pueden construir sistemas más eficientes, mantenibles y escalables.
+
+Espero que esta introducción haya sido útil para comprender los conceptos básicos de la POO. ¡A partir de aquí, puedes explorar y profundizar en este fascinante mundo de la programación!
